@@ -1,0 +1,11 @@
+set folder = ~/mail/orc-mail
+set realname   = "Ilya Kuzmin"
+set from       = "Ilya.Kuzmin@orc-group.com"
+set signature  = "~/.mutt/accounts/orc-mail.signature"
+
+set mbox_type = Maildir
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record    = "+Sent Items1"
+
+# vim : ft=muttrc nospell

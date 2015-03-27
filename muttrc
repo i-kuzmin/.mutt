@@ -1,0 +1,61 @@
+# main options
+set editor=vim
+set sendmail="/usr/bin/msmtp"
+
+set edit_headers = yes
+set header_cache = ~/.cache/mutt
+set mailcap_path = ~/.mutt/mailcap
+set mask="!^\\.[^.]"
+
+# sort/threading
+set sort=threads
+set sort_aux = reverse-last-date-received
+set sort_re
+
+set mail_check = 0
+set envelope_from
+
+# look and feel
+set pager_index_lines = 8
+set pager_context     = 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
+
+
+ignore *                               # first, ignore all headers
+unignore from: to: cc: date: subject:  # then, show only these
+hdr_order from: to: cc: date: subject: # and in this order
+
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old       # treat all unread messages as new
+set metoo            # unset metoobremove my address from recipients when replying
+unset reply_self     # when reply to message sent by me, reply to recipients
+
+auto_view text/html
+alternative_order text/enriched text/plain text text/html
+
+# --- composing {
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set include
+set forward_quote
+# } composing ---
+
+# --- includes {
+source ~/.mutt/hooks
+source  ~/.mutt/colors
+source ~/.mutt/mailboxes
+source ~/.mutt/labels_support
+source ~/.mutt/macros
+source ~/.mutt/bindings
+source ~/.mutt/accounts/orc-mail
+# } includes ---
+
+# vim: foldmarker={,}
